@@ -1,0 +1,119 @@
+\documentclass[twoside,openright,headings=optiontohead]{scrbook}
+\renewcommand{\baselinestretch}{1.3}  %行間距倍率
+\columnsep 7mm
+%\renewcommand\thepage{}
+
+
+\usepackage[
+a4paper=true,
+%CJKbookmarks,
+unicode=true,
+bookmarksnumbered,
+bookmarksopen,
+hyperfigures=true,
+hyperindex=true,
+pdfpagelayout = SinglePage,
+%pdfpagelayout = TwoPageRight,
+pdfpagelabels = true,
+pdfstartview = FitV,
+colorlinks,
+pdfborder=001,
+linkcolor=black,
+anchorcolor=black,
+citecolor=black,
+pdftitle={温故一九四二},
+pdfauthor={刘震云},
+pdfsubject={温故一九四二},
+pdfkeywords={对于我来说，那是一个遥远的年代，遥远到如果不借助文字或者图片都无法去想象的年代。那一年，中国抗日战争进入战略相持阶段，抗日战争进入最重要的时期。自 1937 年抗日战争爆发，河南有几十万中国抗日军队驻防，而这几十万人的粮草补充，全靠自己省内解决。从 1937 年到 1942 年，五年半的时间，河南兵粮的贡献都是全国第一。沉重的兵役和赋税数额，使河南的民力物力财力枯竭，许多农民破产逃亡。其实就是在风调雨顺的时候，河南农民在交粮纳赋之后，也只能靠野菜和一些杂粮度日，更谈不上任何储藏。当时的百姓家都吃不上饭，许多百姓就被活活饿死。1942 年河南全省遭灾，百姓的日子就更难过了。当时麦收只有一两成，秋粮甚至完全绝收，一场特大的饥荒就爆发了，这决不是偶然。颗粒无收的千百万民众不得不背井离乡，外出逃荒。},
+pdfcreator={https://m-mono.github.io}
+]{hyperref}
+
+
+\usepackage{geometry}
+\geometry{left=3cm,right=3cm,top=4cm,bottom=3cm,foot=4cm}
+\usepackage{graphics,graphicx,pdfpages}
+
+%自动加注拼音
+\usepackage{xpinyin}
+\xpinyinsetup{format={\color{PinYinColor}}}
+%手动加注外语及日语振假名
+\usepackage{ruby}
+\renewcommand\rubysize{0.4} %匹配 xpinyin 默认标注字体大小
+\renewcommand\rubysep{-0.5em} %匹配 xpinyin 默认标注高度
+
+\usepackage{xeCJK}
+\usepackage{indentfirst}
+\setlength{\parindent}{2.0em}
+
+%正文字体
+\setCJKmainfont[Path=Fonts/]{WenYue-GuDianMingChaoTi-NC-W5.otf}
+\setCJKsansfont[Path=Fonts/]{WenYue-GuDianMingChaoTi-NC-W5.otf}
+\setCJKmonofont[Path=Fonts/]{WenYue-GuDianMingChaoTi-NC-W5.otf}
+\setmainfont[Path=Fonts/]{WenYue-GuDianMingChaoTi-NC-W5.otf}
+\setsansfont[Path=Fonts/]{WenYue-GuDianMingChaoTi-NC-W5.otf}
+\setmonofont[Path=Fonts/]{WenYue-GuDianMingChaoTi-NC-W5.otf}
+
+
+
+% 頁面及文字顏色
+\usepackage{xcolor}
+\definecolor{TEXTColor}{RGB}{50,50,50} % TEXT Color
+\definecolor{PinYinColor}{RGB}{130,130,130} % TEXT Color
+\definecolor{NOTEXTColor}{RGB}{0,0,0} % No TEXT Color
+\definecolor{BGColor}{RGB}{240,240,240} % BG Color
+
+
+\usepackage{multicol}
+
+\makeindex
+\renewcommand{\contentsname}{{温故一九四二}}
+\usepackage{fancyhdr} % 設置頁眉頁腳
+\pagestyle{fancy}
+%\fancyhf{} % 清空當前設置
+\renewcommand{\headrulewidth}{0pt}  %頁眉線寬，設為0可以去頁眉線
+\renewcommand{\footrulewidth}{0pt}  %頁眉線寬，設為0可以去頁眉線
+
+\usepackage{titletoc}
+\dottedcontents{section}[100em]{\bfseries}{100em}{100em} % 去掉目录虚线
+
+
+\begin{document}
+	\frontmatter
+	\begin{figure}[ht]
+		\begin{center}
+			\includepdf[width=\paperwidth,height=\paperheight]{Frontmatter.jpg}
+		\end{center}
+	\end{figure}
+	\newpage
+	\begin{center}
+		\phantom {placeholder}
+	\vspace{5cm}
+	{\Huge 温故一九四二}\\
+	\vspace{2cm}
+	{\Huge 刘震云}
+	\end{center}
+	\newpage
+	{\color{TEXTColor}
+		\begin{multicols}{2}
+			\tableofcontents
+		\end{multicols}
+		\newpage
+		\mainmatter
+		\begin{multicols}{2}
+			\include{./Chapters/00}
+			\include{./Chapters/01}
+			\include{./Chapters/02}
+			\include{./Chapters/03}
+			\include{./Chapters/04}
+			\include{./Chapters/05}
+			\include{./Chapters/06}
+			\include{./Chapters/07}
+		\end{multicols}
+		\backmatter
+		{\color{TEXTColor}
+			\begin{figure}[ht]
+				\begin{center}
+					\includepdf[height=\paperheight]{Backmatter.jpg}
+				\end{center}
+			\end{figure}
+\end{document}
