@@ -29,9 +29,11 @@ pdfcreator={https://m-mono.github.io}
 ]{hyperref}
 
 
-\usepackage{geometry}
-\geometry{left=3cm,right=3cm,top=4cm,bottom=3cm,foot=4cm}
+%Kindle Voyage, Paperwhite (3rd gen), Oasis: 6 in diagonal, 1448 × 1072 pixels @ 300 PPI 
+\usepackage[papersize={9cm,12.2cm}]{geometry} % Kindle Format
+\geometry{left=1.3cm,right=1.3cm,top=2cm,bottom=1cm,foot=4cm}
 \usepackage{graphics,graphicx,pdfpages}
+
 
 %自动加注拼音
 \usepackage{xpinyin}
@@ -54,6 +56,7 @@ pdfcreator={https://m-mono.github.io}
 \setmonofont[Path=Fonts/]{WenYue-GuDianMingChaoTi-NC-W5.otf}
 %补缺字体
 \newfontfamily{\Add}[Path=Fonts/]{SourceHanSansCN-Normal.otf}
+
 
 
 % 頁面及文字顏色
@@ -82,26 +85,22 @@ pdfcreator={https://m-mono.github.io}
 	\frontmatter
 	\begin{figure}[ht]
 		\begin{center}
-			\includepdf[width=\paperwidth,height=\paperheight]{Frontmatter.jpg}
+			\includepdf[height=\paperheight,width=\paperwidth]{Frontmatter.jpg}
 		\end{center}
 	\end{figure}
 	\newpage
-	\begin{center}
-		\phantom {placeholder}
-	\vspace{5cm}
-	{\Huge 温故一九四二}\\
-	\vspace{2cm}
-	{\Huge 刘震云}
-	\end{center}
+		\begin{center}
+			\phantom {placeholder}
+			\vspace{5mm}
+			{\Huge 温故一九四二}\\
+			\vspace{5mm}
+			{\Huge 刘震云}
+		\end{center}
 	\newpage
 	{\color{TEXTColor}
-		\begin{multicols}{2}
-			\tableofcontents
-		\end{multicols}
+		\tableofcontents
 		\newpage
 		\mainmatter
-		\begin{multicols}{2}
-			\include{./Chapters/00}
 			\include{./Chapters/01}
 			\include{./Chapters/02}
 			\include{./Chapters/03}
@@ -109,7 +108,6 @@ pdfcreator={https://m-mono.github.io}
 			\include{./Chapters/05}
 			\include{./Chapters/06}
 			\include{./Chapters/07}
-		\end{multicols}
 		\backmatter
 		{\color{TEXTColor}
 			\begin{figure}[ht]

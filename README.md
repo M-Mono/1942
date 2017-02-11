@@ -18,7 +18,7 @@
 
 
 
-![温故一九四二· 刘震云 (A4)](https://github.com/M-Mono/1942/raw/master/Frontmatter.jpg)
+![温故一九四二 · 刘震云](https://github.com/M-Mono/m-mono.github.io/raw/master/images/Frontmatter_1942.jpg)
 
 ---
 编译环境：
